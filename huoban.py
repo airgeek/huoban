@@ -1,8 +1,3 @@
-'''
-伙伴云,经测试,可作为临时数据库
-这里实现了一个基本类，方便后续操作
-'''
-
 from urllib.parse import urlparse, parse_qs
 import re
 import base64
@@ -11,7 +6,7 @@ import requests
 
 class HUOBAN:
 	def __init__(self,share_url):
-		self.domain_encode = 'aHVvYmFuLmNvbQ=='
+		self.domain_encode = 'aHVvYmFuLmNvbQ==' #简单bs64一下域名,低调使用
 		self.domain = base64.b64decode(self.domain_encode.encode()).decode()
 		self.__set_default(share_url) #初始化参数
 		self.__get_tk() #获取令牌
